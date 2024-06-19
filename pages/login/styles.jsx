@@ -10,19 +10,20 @@ const styles = StyleSheet.create({
     caixa: {
         width: '80%',
         borderRadius: 30,
-        borderColor: 'black',
+        borderColor: '#ccc',
         padding: 8,
-        fontSize: 20,
+        fontSize: 18,
         color: 'black',
         marginTop: 10,
         borderWidth: 1,
     },
     logomarca: {
         width: 200, 
-        height: 130, 
+        height: 100, 
         resizeMode: 'contain', 
         borderColor: 'black', 
         marginBottom: 20,
+        marginLeft: 60
     },
     caixas: {
         alignItems: 'center',
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     },
     btnLogin: {
         color: 'white',
-        marginTop: 20,
+        marginTop: 50,
         borderWidth: 1,
         borderRadius: 30,
         width: '40%',
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textSign: {
+        marginTop:20,
         fontSize: 17,
         color: 'white',
     },

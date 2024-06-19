@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 import  Geo from './pages/geo/';
 import Login from './pages/login';
+import Cadastro from './pages/cadastro';
+import Sensores from './pages/sensores';
 
-const Pilha = createStackNavigator();
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -22,7 +24,7 @@ function MyTabs() {
             tabBarActiveTintColor: '#88EAF0',
             tabBarInactiveTintColor: '#555'
         }}  >
-                <Tab.Screen
+                {/* <Tab.Screen
                 name="Login"
                 component={Login}
                 options={{
@@ -33,6 +35,18 @@ function MyTabs() {
                     )
                 }}
             />
+
+                <Tab.Screen
+                name="SignUp"
+                component={Cadastro}
+                options={{
+                    headerShown: false,
+                    tabBarStyle: { display: 'none' },
+                    tabBarIcon: ({ size, color }) => (
+                        <Feather name="user" size={size} color={color} />
+                    )
+                }}
+            /> */}
                 
             <Tab.Screen
                 name="Mapa"
@@ -47,7 +61,7 @@ function MyTabs() {
         
             <Tab.Screen
                 name="Sensores"
-                component={Geo}
+                component={Sensores}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ size, color }) => (
@@ -56,19 +70,19 @@ function MyTabs() {
                 }}
             />
 
+        
+
         </Tab.Navigator>
     );
 }
 export default function Routers() {
     return (
         <NavigationContainer>
-            <Pilha.Navigator>
-                <Pilha.Screen
-                    name="MyTabs"
-                    component={MyTabs}
-                    options={{ headerShown: false }}
-                />
-            </Pilha.Navigator>
+            <Stack.Navigator>
+                <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                <Stack.Screen name="SignUp" component={Cadastro} options={{ headerShown: false }} />
+                <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
+            </Stack.Navigator>
         </NavigationContainer>
     )
 }

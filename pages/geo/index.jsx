@@ -85,6 +85,7 @@ export default function Geo() {
              <View style={styles.header}>
                 <Image source={logomarca} style={styles.logomarca} />
             </View>
+            <View style={styles.itens}>
             <MapView
                 style={styles.map}
                 initialRegion={initialRegion}
@@ -93,14 +94,14 @@ export default function Geo() {
                     <Marker
                         key={point.id}
                         coordinate={{ latitude: point.latitude, longitude: point.longitude }}
-                        pinColor="yellow"
+                        pinColor="#317176"
                         title='Nome localização'
                     />
                 ))}
                 {location && (
                     <Marker
                         coordinate={{ latitude: location.latitude, longitude: location.longitude }}
-                        pinColor="red"
+                        pinColor="#7CD1D9"
                     />
                 )}
             </MapView>
@@ -111,6 +112,7 @@ export default function Geo() {
                 <View style={styles.cx}><Text style={styles.cxTxt}>Distância até o ponto fixo 1: </Text>{distance1 !== null && <Text style={styles.cxTxt}>{distance1.toFixed(1)} metros</Text>}</View>
                 <View style={styles.cx}><Text style={styles.cxTxt}>Distância até o ponto fixo 2: </Text>{distance2 !== null && <Text style={styles.cxTxt}>{distance2.toFixed(2)} metros</Text>}</View>
                 <View style={styles.cx}><Text style={styles.cxTxt}>Temperatura:</Text><Text style={styles.cxTxt}>{temp}ºC</Text></View>
+            </View>
             </View>
         </View>
     );
